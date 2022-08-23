@@ -29,7 +29,7 @@ const refs = {
 
 }
 
-// let totalPage = 1;
+let totalPage = 1;
 
 refs.form.addEventListener('submit', handleSubmit);
 
