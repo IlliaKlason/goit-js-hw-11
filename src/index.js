@@ -47,14 +47,14 @@ async function handleSubmit(event) {
     try {
         const valueQuery = await fetchPictures(url);
 
-        console.log(valueQuery.hits);
+        // console.log(valueQuery.hits);
 
         if (valueQuery.hits.length === 0) return Notiflix.Notify.info("Sorry, there are no images matching your search query. Please try again.");
         Notiflix.Notify.success(`Hooray! We found ${valueQuery.totalHits} images.`);
 
         totalPage = Math.ceil(valueQuery.totalHits / 40);
 
-        console.log(valueQuery.totalHits);
+        // console.log(valueQuery.totalHits);
 
         createGalleryMarkup(valueQuery, refs.galleryWrapper);
         urlInfo.currentPage += 1;
@@ -76,7 +76,7 @@ async function onScroll() {
 
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 
-    console.log(scrollHeight - 7000);
+    // console.log(scrollHeight - 7000);
     if (scrollTop + clientHeight >= scrollHeight) {
         const url = makeURL(urlInfo);
         showLoader();
